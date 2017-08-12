@@ -1,0 +1,57 @@
+{
+    "title": "Management",
+    "description": "List of Management",
+    "pageType": "view",
+    "sendIdWithCreate": true,
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "designation",
+        "isSort": "",
+        "tableRef": "designation"
+    }, {
+        "name": "image",
+        "isSort": "",
+        "tableRef": "image"
+    }, {
+        "name": "summary",
+        "isSort": "",
+        "tableRef": "Management"
+    }],
+    "action": [{
+        "name": "edit",
+        "icon": "fa-pencil",
+        "buttonClass": "btn-primary",
+        "type": "page",
+        "action": "editManagement",
+        "fieldsToSend": {
+            "_id": "_id"
+        }
+    }, {
+        "name": "delete",
+        "icon": "fa-trash",
+        "buttonClass": "btn-danger",
+        "type": "apiCallConfirm",
+        "title": "Delete Management",
+        "content": "Are you sure you want to delete Management?",
+        "api": "Management/delete",
+        "fieldsToSend": {
+            "name": "_id",
+            "value": "_id"
+        }
+    }],
+    "button": [{
+        "name": "Create",
+        "icon": "plus",
+        "class": "btn-success",
+        "type": "page",
+        "action": "createManagement"
+    }],
+    "apiCall": {
+        "url": "Management/search",
+        "params": "_id"
+    }
+}

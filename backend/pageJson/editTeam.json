@@ -1,0 +1,86 @@
+{
+    "title": "Edit Team",
+    "name": "Team",
+    "jsonPage": "viewTeam",
+    "desciption": "",
+    "pageType": "edit",
+    "urlFields": ["_id"],
+    "fields": [{
+        "name": "Tagline",
+        "type": "text",
+        "tableRef": "tagline",
+        "placeholder": "Enter tagline",
+        "id": "tagline",
+        "validation": ["", "trim", "unique"],
+        "url": ""
+    }, {
+        "name": "teamId",
+        "type": "text",
+        "tableRef": "teamId",
+        "placeholder": "Enter Team",
+        "id": "team",
+        "validation": ["", "trim", ""],
+        "url": ""
+    },{
+        "name": "Member Team",
+        "type": "tags",
+        "dropDownType": "multiple",
+        "dropDownField": "name",
+        "tableRef": "memberTeam",
+        "searchApi": "searchCall",
+        "placeholder": "Enter Team",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Member/search"
+    },{
+        "name": "Footer",
+        "type": "tags",
+        "tableRef": "footerId",
+        "placeholder": "Enter footerId",
+        "id": "footerId",
+        "validation": ["", "trim", ""],
+        "url": "Footer/search",
+        "dropDownField": "name",
+        "dropDownType": "single",
+        "onView": true
+    },{
+        "name": "Header",
+        "type": "tags",
+        "tableRef": "headerId",
+        "placeholder": "Enter headerId",
+        "id": "headerId",
+        "validation": ["", "trim", ""],
+        "url": "Header/search",
+        "dropDownField": "name",
+        "dropDownType": "single",
+        "onView": true
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitTeam",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTeam"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewTeam"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "Team/save",
+        "params": "_id"
+    },
+    "preApi": {
+        "url": "Team/getOne",
+        "params": "_id"
+    }
+
+}
