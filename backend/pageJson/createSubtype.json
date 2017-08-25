@@ -24,17 +24,6 @@
         "id": "input1",
         "validation": ["", "trim", ""],
         "url": "Brand/search"
-    },{
-        "name": "Question",
-        "type": "tags",
-        "tableRef": "question",
-        "dropDownType": "multiple",
-        "dropDownField": "name",
-        "searchApi": "searchCall",
-        "placeholder": "Enter Question",
-        "id": "input1",
-        "validation": ["", "trim", ""],
-        "url": "Question/search"
     }],
     "action": [{
         "name": "submit",

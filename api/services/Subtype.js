@@ -4,31 +4,38 @@ var schema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'Brand',
         index: true
-    },
-    question:[{
-        type: Schema.Types.ObjectId,
-        ref: 'Question',
-        index: true
-    }]
-
+    }
     
 });
 
-schema.plugin(deepPopulate, {});
+schema.plugin(deepPopulate, {
+    populate: {
+        "brand": {
+            select: '_id name logo'
+        }
+    }    
+});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 
 module.exports = mongoose.model('Subtype', schema);
 
-var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
+var exports = _.cloneDeep(require("sails-wohlig-service")(schema,'brand','brand'));
 var model = {
-    get:function(data,callback){
-        
+    getAll : function(data,callback){
+        Subtype.find().lean().deepPopulate("brand").exec(function (err, found) {
+                        if(err){
+                            callback(err,null);
+                        }else{
+                            if(_.isEmpty(found)){
+                                callback(null,[]);
+                            }else{
+                                callback(null,found);
+                            }
+                        }
+                    });
     },
     
-
-    
-
 };
 
     
