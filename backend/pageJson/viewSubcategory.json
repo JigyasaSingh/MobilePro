@@ -1,6 +1,6 @@
 {
-    "title": "Brand",
-    "description": "List of Brand",
+    "title": "Subcategory",
+    "description": "List of Subcategory",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -14,7 +14,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editBrand",
+        "action": "editSubcategory",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,9 +23,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Brand",
-        "content": "Are you sure you want to delete Brand?",
-        "api": "Brand/delete",
+        "title": "Delete Subcategory",
+        "content": "Are you sure you want to delete Subcategory?",
+        "api": "Subcategory/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -36,10 +36,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createBrand"
+        "action": "createSubcategory"
     }],
     "apiCall": {
-        "url": "Brand/search",
+        "url": "Subcategory/search",
         "params": "_id"
     }
 }

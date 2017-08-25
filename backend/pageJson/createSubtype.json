@@ -1,10 +1,10 @@
 {
-    "title": "Create Brand",
-    "name": "brand",
-    "jsonPage": "viewBrand",
+    "title": "Create Subtype",
+    "name": "Subtype",
+    "jsonPage": "viewSubtype",
     "desciption": "",
     "pageType": "create",
-    "urlFields": ["brand"],
+    "urlFields": ["Subtype"],
     "fields": [{ 
         "name": "Name",
         "type": "text",
@@ -14,24 +14,35 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     },{
-        "name": "logo",
-        "type": "image",
-        "tableRef": "logo",
-        "size": "250 x 250",
-        "placeholder": "Upload photo",
-        "id": "logo",
-        "option": "single",
-        "Onview": true,
-        "validation": ["required", "trim", "unique"],
-        "url": ""
+        "name": "Brand",
+        "type": "tags",
+        "tableRef": "brand",
+        "dropDownType": "single",
+        "dropDownField": "name",
+        "searchApi": "searchCall",
+        "placeholder": "Enter Brand",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Brand/search"
+    },{
+        "name": "Question",
+        "type": "tags",
+        "tableRef": "question",
+        "dropDownType": "multiple",
+        "dropDownField": "name",
+        "searchApi": "searchCall",
+        "placeholder": "Enter Question",
+        "id": "input1",
+        "validation": ["", "trim", ""],
+        "url": "Question/search"
     }],
     "action": [{
         "name": "submit",
-        "action": "submitBrand",
+        "action": "submitSubtype",
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewBrand"
+                "id": "viewSubtype"
             }
         }
     }, {
@@ -40,11 +51,11 @@
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewBrand"
+                "id": "viewSubtype"
             }
         }
     }],
     "apiCall": {
-        "url": "Brand/save"
+        "url": "Subtype/save"
     }
 }
