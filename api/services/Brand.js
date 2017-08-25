@@ -4,9 +4,7 @@ var schema = new Schema({
     
 });
 
-schema.plugin(deepPopulate, {
-    
-});
+schema.plugin(deepPopulate, {});
 schema.plugin(uniqueValidator);
 schema.plugin(timestamps);
 
@@ -14,7 +12,18 @@ module.exports = mongoose.model('Brand', schema);
 
 var exports = _.cloneDeep(require("sails-wohlig-service")(schema));
 var model = {
-    get:function(data,callback){
+    getAll : function(data,callback){
+         Brand.find().lean().exec(function (err, found) {
+                        if(err){
+                            callback(err,null);
+                        }else{
+                            if(_.isEmpty(found)){
+                                callback(null,[]);
+                            }else{
+                                callback(null,found);
+                            }
+                        }
+                    });
 
     },
     
