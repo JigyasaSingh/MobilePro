@@ -45,6 +45,6 @@
         }
     }],
     "apiCall": {
-        "url": "Brand/saveBrand"
+        "url": "Brand/save"
     }
 }

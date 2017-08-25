@@ -45,7 +45,7 @@
         }
     }],
     "apiCall": {
-        "url": "Brand/saveBrand",
+        "url": "Brand/save",
         "params": "_id"
     },
     "preApi": {

@@ -1,20 +1,20 @@
 {
-    "title": "Portfolio",
-    "description": "List of Portfolios",
+    "title": "Brand",
+    "description": "List of Brand",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Tagline",
+        "name": "Name",
         "isSort": "",
-        "tableRef": "tagline"
+        "tableRef": "name"
     }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editPortfolio",
+        "action": "editBrand",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,9 +23,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete Portfolio",
-        "content": "Are you sure you want to delete Portfolio?",
-        "api": "Portfolio/delete",
+        "title": "Delete Brand",
+        "content": "Are you sure you want to delete Brand?",
+        "api": "Brand/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -36,10 +36,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createPortfolio"
+        "action": "createBrand"
     }],
     "apiCall": {
-        "url": "Portfolio/search",
+        "url": "Brand/search",
         "params": "_id"
     }
 }

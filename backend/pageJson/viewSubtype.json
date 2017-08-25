@@ -1,6 +1,6 @@
 {
-    "title": "SubType",
-    "description": "List of SubTypes",
+    "title": "Brand",
+    "description": "List of Brand",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -14,7 +14,7 @@
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editSubType",
+        "action": "editBrand",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,9 +23,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete SubType",
-        "content": "Are you sure you want to delete SubType?",
-        "api": "SubType/delete",
+        "title": "Delete Brand",
+        "content": "Are you sure you want to delete Brand?",
+        "api": "Brand/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -36,10 +36,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createSubType"
+        "action": "createBrand"
     }],
     "apiCall": {
-        "url": "SubType/search",
+        "url": "Brand/search",
         "params": "_id"
     }
 }
