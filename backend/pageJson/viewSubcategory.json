@@ -1,6 +1,6 @@
 {
-    "title": "SubServices",
-    "description": "List of SubServicess",
+    "title": "Subcategory",
+    "description": "List of Sub Category",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
@@ -8,13 +8,17 @@
         "name": "Name",
         "isSort": "",
         "tableRef": "name"
+    }, {
+        "name": "Description",
+        "isSort": "",
+        "tableRef": "description"
     }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editSubServices",
+        "action": "editSubcategory",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,9 +27,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete SubServices",
-        "content": "Are you sure you want to delete SubServices?",
-        "api": "SubServices/delete",
+        "title": "Delete Subcategory",
+        "content": "Are you sure you want to delete Subcategory?",
+        "api": "Subcategory/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -36,10 +40,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createSubServices"
+        "action": "createSubcategory"
     }],
     "apiCall": {
-        "url": "SubServices/search",
+        "url": "Subcategory/search",
         "params": "_id"
     }
 }

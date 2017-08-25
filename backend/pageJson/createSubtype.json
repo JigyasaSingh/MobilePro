@@ -1,0 +1,47 @@
+{
+    "title": "Create Sub Type",
+    "name": "Sub Type",
+    "jsonPage": "viewSubType",
+    "desciption": "",
+    "pageType": "create",
+    "urlFields": ["SubType"],
+    "fields": [{
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },  {
+        "name": "Name",
+        "type": "text",
+        "tableRef": "name",
+        "placeholder": "Enter name",
+        "id": "name",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    }],
+    "action": [{
+        "name": "submit",
+        "action": "submitSubType",
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubType"
+            }
+        }
+    }, {
+        "name": "cancel",
+        "sideMenuRedirect": true,
+        "stateName": {
+            "page": "page",
+            "json": {
+                "id": "viewSubType"
+            }
+        }
+    }],
+    "apiCall": {
+        "url": "SubType/save"
+    }
+    }

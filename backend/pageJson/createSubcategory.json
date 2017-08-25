@@ -1,22 +1,11 @@
 {
-    "title": "Edit Services",
-    "name": "Services",
-    "jsonPage": "viewServices",
+    "title": "Create Subcategory",
+    "name": "Subcategory",
+    "jsonPage": "viewSubcategory",
     "desciption": "",
-    "pageType": "edit",
-    "urlFields": ["_id"],
+    "pageType": "create",
+    "urlFields": ["Subcategory"],
     "fields": [{
-        "name": "Sub Service",
-        "type": "tags",
-        "dropDownType": "single",
-        "dropDownField": "subService",
-        "tableRef": "subService",
-        "searchApi": "searchCall",
-        "placeholder": "Enter Team",
-        "id": "input1",
-        "validation": ["", "trim", ""],
-        "url": "SubService/search"
-    }, {
         "name": "Name",
         "type": "text",
         "tableRef": "name",
@@ -24,15 +13,7 @@
         "id": "name",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    }, {
-        "name": "Description",
-        "type": "text",
-        "tableRef": "description",
-        "placeholder": "Enter description",
-        "id": "description",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },  {
+    },   {
         "name": "Image",
         "type": "image",
         "tableRef": "image",
@@ -44,22 +25,6 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
-        "name": "Tagline",
-        "type": "text",
-        "tableRef": "tagline",
-        "placeholder": "Enter tagline",
-        "id": "tagline",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    }, {
-        "name": "Priority",
-        "type": "text",
-        "tableRef": "priority",
-        "placeholder": "Enter priority",
-        "id": "priority",
-        "validation": ["required", "trim", "unique"],
-        "url": ""
-    },{
         "name": "Footer",
         "type": "tags",
         "tableRef": "footerId",
@@ -84,11 +49,11 @@
     }],
     "action": [{
         "name": "submit",
-        "action": "submitServices",
+        "action": "submitSubcategory",
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewServices"
+                "id": "viewSubcategory"
             }
         }
     }, {
@@ -97,17 +62,11 @@
         "stateName": {
             "page": "page",
             "json": {
-                "id": "viewServices"
+                "id": "viewsubcategory"
             }
         }
     }],
     "apiCall": {
-        "url": "Services/save",
-        "params": "_id"
-    },
-    "preApi": {
-        "url": "Services/getOne",
-        "params": "_id"
+        "url": "Subcategory/saveInSubcategory"
     }
-
 }

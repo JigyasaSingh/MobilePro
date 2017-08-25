@@ -1,20 +1,20 @@
 {
-    "title": "About",
-    "description": "List of Users",
+    "title": "SubType",
+    "description": "List of SubTypes",
     "pageType": "view",
     "sendIdWithCreate": true,
     "urlFields": ["_id"],
     "fields": [{
-        "name": "Tagline",
+        "name": "Name",
         "isSort": "",
-        "tableRef": "tagline"
+        "tableRef": "name"
     }],
     "action": [{
         "name": "edit",
         "icon": "fa-pencil",
         "buttonClass": "btn-primary",
         "type": "page",
-        "action": "editAbout",
+        "action": "editSubType",
         "fieldsToSend": {
             "_id": "_id"
         }
@@ -23,9 +23,9 @@
         "icon": "fa-trash",
         "buttonClass": "btn-danger",
         "type": "apiCallConfirm",
-        "title": "Delete About",
-        "content": "Are you sure you want to delete About?",
-        "api": "About/delete",
+        "title": "Delete SubType",
+        "content": "Are you sure you want to delete SubType?",
+        "api": "SubType/delete",
         "fieldsToSend": {
             "name": "_id",
             "value": "_id"
@@ -36,10 +36,10 @@
         "icon": "plus",
         "class": "btn-success",
         "type": "page",
-        "action": "createAbout"
+        "action": "createSubType"
     }],
     "apiCall": {
-        "url": "About/search",
+        "url": "SubType/search",
         "params": "_id"
     }
 }
